@@ -62,3 +62,17 @@ REST_FRAMEWORK = {
 Entrar no arquivo urls.py e importar o include `from django.urls import path, include`
 e adicionar no urlpattens o `path('auth/', include('rest_framework.urls'))`
 (Serve para você testar a autenticação diretamente na interface do DRF, sem precisar criar uma tela de login ainda.)
+
+### Model Serializers
+Serve para transformar o django model em estrutura json para lidar com as requisições da api 
+Criar o arquivo `cursos/serializers.py`
+
+### Views
+Implementar as views para acessar a api quando as req https forem feitas, fazer em `cursos/views.py`
+
+### Rotas 
+Criar o arquivo de rotas dentro de `cursos/` com o nome `/urls.py`
+Após criar as rotas adicionar elas em `/escola/urls.py` dentro de `urlpatterns`
+
+### Status http
+Importar `from rest_framework import status` no arquivo para poder devolver respostas ao usuario 
