@@ -68,7 +68,8 @@ Serve para transformar o django model em estrutura json para lidar com as requis
 Criar o arquivo `cursos/serializers.py`
 
 ### Views
-Implementar as views para acessar a api quando as req https forem feitas, fazer em `cursos/views.py`
+Implementar as views para acessar a api quando as req https forem feitas, fazer em `cursos/views.py` 
+(esse modelo ficou no arquivo old_views.py após utilizarmos do generic views, metodo mais rapido de escrever)
 
 ### Rotas 
 Criar o arquivo de rotas dentro de `cursos/` com o nome `/urls.py`
@@ -76,3 +77,7 @@ Após criar as rotas adicionar elas em `/escola/urls.py` dentro de `urlpatterns`
 
 ### Status http
 Importar `from rest_framework import status` no arquivo para poder devolver respostas ao usuario 
+
+### Generic views
+Ele melhora a criação dos crud, fazer em `cursos/views.py`, o que foi feito em 39 linhas se resume em 15
+com ele será adicionado também os outros crud então tem de adicionar as urls em `urls.py`
