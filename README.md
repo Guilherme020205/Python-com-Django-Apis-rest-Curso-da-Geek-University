@@ -86,3 +86,15 @@ com ele será adicionado também os outros crud então tem de adicionar as urls 
 As vezes poderar ter condições ao fazer uma requisição, podemos buscar todos os cursos ou apenas o curso com id 2 
 para fazer isso sobrescrevemos a view, na pagina `urls.py` percebece o uso de curso_pk ou avaliacoes_pk que seriam
 os id, por padrao ele não faz isso corretamente, então temos de ir na pasta `views.py` e implementar essas condições
+
+### V2
+Criando uma nova versão começamos criando as views novas com view set e depois mudando as urls.
+
+### View set
+Recurso que permite agrupar toda logica de um recurso em uma class que é o view set 
+
+### Routers
+Ele cria os caminhos das apis as urls 
+
+De pois que fazer os view set no `views.py` e o routers no `urls.py` entramos no `escola/urls.py` 
+e configuramos a rota da api v2

@@ -38,7 +38,7 @@ class Avaliacao(Base):
     # Cria uma relação com a tabela Curso (chave estrangeira)
     # related_name permite acessar todas as avaliações de um curso (curso.avaliacao.all())
     # on_delete=models.CASCADE apaga as avaliações se o curso for apagado
-    curso = models.ForeignKey(Curso, related_name='avaliacao', on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, related_name='avaliacoes', on_delete=models.CASCADE)
 
     # Nome da pessoa que fez a avaliação
     nome = models.CharField(max_length=255)
