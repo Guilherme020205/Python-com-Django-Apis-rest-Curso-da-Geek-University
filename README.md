@@ -81,3 +81,8 @@ Importar `from rest_framework import status` no arquivo para poder devolver resp
 ### Generic views
 Ele melhora a criação dos crud, fazer em `cursos/views.py`, o que foi feito em 39 linhas se resume em 15
 com ele será adicionado também os outros crud então tem de adicionar as urls em `urls.py`
+
+### Sobrescrevendo as views
+As vezes poderar ter condições ao fazer uma requisição, podemos buscar todos os cursos ou apenas o curso com id 2 
+para fazer isso sobrescrevemos a view, na pagina `urls.py` percebece o uso de curso_pk ou avaliacoes_pk que seriam
+os id, por padrao ele não faz isso corretamente, então temos de ir na pasta `views.py` e implementar essas condições
