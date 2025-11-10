@@ -1,5 +1,7 @@
 # Python-com-Django-Apis-rest-Curso-da-Geek-University
 
+senha forte usuario feliz: uGetS@PXW2cMLue
+
 Primeiro de tudo baixar o Django, ir no site e ver a versão LTS mais recente. 
 https://www.djangoproject.com/download/
 
@@ -141,3 +143,35 @@ e adicionar `rest_framework.authtoken`, com isso ir no mesmo arquivo no `REST_FR
 `rest_framework.authentication.TokenAuthentication`
 
 Feito isso rodar o comando `python manage.py migrate` para atualizar as tabelas.
+
+Está pronto! 
+
+    Testando o token 
+    Dentro do terminar digite alguns comandos para consegui cadastrar um tokem pro usuario
+    
+    # Comando para abrir o shell
+    `python manage.py shell`
+
+    # Importar a class token e User
+    `from rest_framework.authtoken.models import Token`
+    `from django.contrib.auth.models import User`
+    
+    # Pegar o usuario
+    guilherme = User.objects.get(id=1)
+    se ecrever o nome do usuario ele tem que retornar <User: guilherme>    
+    se ecrever guilherme.email ele tem que retornar o email cadastrado     
+    
+    # Comando para criar o token 
+    `token = Token.objects.create(user=guilherme)`
+
+    # Comando para receber o token 
+    `token.key`
+    
+    Para testar entra no insomnia cria o request e usando post,put ou del va em headers, clicar em add
+    no campo header escrever `Authorization` no campo value `Token xxxx` o xxx representa o seu token  
+
+### Permissões
+Permissões do uso do sistema para os usuarios
+importar na `cursos/views.py` `from rest_framework import permissions`
+foi adicionado na versão `v2` na class Curso o codigo`permission_classes = (permissions.DjangoModelPermissions, )`
+com isso ele altera qual a permissão os usuarios vão ter nessa view especifica
