@@ -98,3 +98,17 @@ Ele cria os caminhos das apis as urls
 
 De pois que fazer os view set no `views.py` e o routers no `urls.py` entramos no `escola/urls.py` 
 e configuramos a rota da api v2
+
+### Relações 
+Criar uma relação entre modelos, no exemplo ele ira mostrar todas as avaliações do curso no arquivo 
+`serializers.py` estão comentados no código igual à tabela abaixo
+
+    # Nested Relationshipe
+    Ele retorna todos os dados de avaliação que cada curso tem
+    
+    # HyperLinked Related Field
+    Ele retorna um link que leva para os dados de avaliação de cada curso
+    
+    # Primary Key Related Field
+    Ele retorna apenas o id de todas avaliações do curso
+
