@@ -175,3 +175,7 @@ Permissões do uso do sistema para os usuarios
 importar na `cursos/views.py` `from rest_framework import permissions`
 foi adicionado na versão `v2` na class Curso o codigo`permission_classes = (permissions.DjangoModelPermissions, )`
 com isso ele altera qual a permissão os usuarios vão ter nessa view especifica
+
+
+### Validando dados recebidos 
+Podemos criar dentro de `serializers.py` um metodo novo `def validate_avaliacao`

@@ -48,7 +48,7 @@ class Avaliacao(Base):
     # Comentário (pode ser vazio)
     comentario = models.TextField(blank=True, default='')
     # Nota da avaliação (campo decimal, ex: 4.5)
-    avaliacao = models.DecimalField(decimal_places=2, max_digits=3)  # corrigido: max_digits precisa ser maior que decimal_places
+    avaliacao = models.DecimalField(decimal_places=1, max_digits=2)  # corrigido: max_digits precisa ser maior que decimal_places
 
     class Meta:
         # Define nomes para exibição no admin
