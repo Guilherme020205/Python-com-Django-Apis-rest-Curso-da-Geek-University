@@ -132,3 +132,12 @@ dentro de `class Meta` de cada uma das class, se quiser na ordem decrescente col
 
         serializer = AvaliacaoSerializer(avaliacoes, many=True)
     }
+
+### Utilizando autenticação via Token
+Lá no começo foi colocado uma autenticação para ser acessado na web do django, mas para outros serviços tem de
+ter uma melhor autenticação. Para isso entrar no `escola/settings.py` ir até `INSTALLED_APPS` 
+e adicionar `rest_framework.authtoken`, com isso ir no mesmo arquivo no `REST_FRAMEWORK` mudar no 
+`DEFAULT_AUTHENTICATION_CLASSES` de `rest_framework.authentication.SessionAuthentication` para 
+`rest_framework.authentication.TokenAuthentication`
+
+Feito isso rodar o comando `python manage.py migrate` para atualizar as tabelas.
