@@ -27,6 +27,7 @@ class Curso(Base):
         # Define nomes mais legíveis no painel admin do Django
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
+        ordering = ['id']
 
     # Define o que será mostrado quando o objeto for convertido para string (ex: no admin)
     def __str__(self):
@@ -55,6 +56,7 @@ class Avaliacao(Base):
         verbose_name_plural = 'Avaliacoes'
         # Garante que uma mesma pessoa (email) só possa avaliar um curso uma vez
         unique_together = (('email', 'curso'),)
+        ordering = ['id']
 
     # Mostra uma descrição legível da avaliação
     def __str__(self):

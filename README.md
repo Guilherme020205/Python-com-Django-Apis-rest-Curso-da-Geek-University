@@ -112,3 +112,23 @@ Criar uma relação entre modelos, no exemplo ele ira mostrar todas as avaliaç�
     # Primary Key Related Field
     Ele retorna apenas o id de todas avaliações do curso
 
+### Paginação 
+Ir em REST_FRAMEWORK no arquivo `escola.settings.py` e adicionar o `DEFAULT_PAGINATION_CLASS`
+
+Quando colocar paginação, vamos nos models e escrever que a ordem de listar deve ser pelo id `ordering = ['id']`
+dentro de `class Meta` de cada uma das class, se quiser na ordem decrescente colocar `-id` ficando assim `ordering = ['-id']`
+
+    Metodos extras tem que ser adicionado a paginação manualmente, exemplo no arquivo 
+    `cursos/views.py` no CursoViewSet dentro de action na 'V2' colocar dentro do def
+    algo assim:     
+    {
+     self.pagination_class.page_size = 1
+        avaliacoes = Avaliacao.objects.filter(curso_id=pk)
+        page = self.paginate_queryset(avaliacoes)
+
+        if page is not None:
+            serializer = AvaliacaoSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = AvaliacaoSerializer(avaliacoes, many=True)
+    }
